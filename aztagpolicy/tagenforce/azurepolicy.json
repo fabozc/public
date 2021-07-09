@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "displayName": "custom_taggingvalue_test",
+    "mode": "All",
+    "description": "Ensure that a tag value matches a text pattern",
+    "parameters": {
+      "tagName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name",
+          "description": "Name of the tag, such as 'environment'"
+        }
+      }
+    },
+    "policyRule": {
+      "if": {
+        "field": "[concat('tags[', parameters('tagName'), ']')]",
+        "exists": "false"
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  }
+}
