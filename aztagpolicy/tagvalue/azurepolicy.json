@@ -7,7 +7,7 @@
             "if": {
                 "not": {
                     "field": "tags.BillToTest",
-                    "match": "???####"
+                    "match": "???#####"
                 }
             },
             "then": {
